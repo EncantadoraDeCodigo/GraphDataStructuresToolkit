@@ -49,15 +49,16 @@ int main()
 {
     // Se define la matriz donde nodo es el número de nodos que se generarán dentro de aquella matriz.
     int nodos = 6;
-    Grafomatriz *z = (Grafomatriz *)malloc(sizeof(Grafomatriz));
-    inicializarMatriz(z, nodos);
+    Grafomatriz* matriz = (Grafomatriz *)malloc(sizeof(Grafomatriz));
+    inicializarMatriz(matriz, nodos);
     // Se agregan las aristas, donde se conectan bidireccional mente el origen y destino junto a su peso
-    agregarAristaMatriz(z, 2, 4, 6);
-    agregarAristaMatriz(z, 0, 1, 4);
-    agregarAristaMatriz(z, 0, 2, 4);
-    agregarAristaMatriz(z, 2, 3, 5);
+    agregarAristaMatriz(matriz, 0, 1, 3); // Conexión entre 0 y 1
+    agregarAristaMatriz(matriz, 0, 2, 4); // Conexión entre 0 y 2
+    agregarAristaMatriz(matriz, 1, 3, 5); // Conexión entre 1 y 3
+    agregarAristaMatriz(matriz, 2, 4, 6); // Conexión entre 2 y 4
+    agregarAristaMatriz(matriz, 3, 5, 2); // Conexión entre 3 y 5
+
     // Se llama la función para imprimir el grafo completo.
-    imprimirMatrizCompleta(z);
-    free(z);
+    imprimirMatrizCompleta(matriz);
     return 0;
 }
