@@ -49,7 +49,7 @@ int main()
 {
     // Se define la matriz donde nodo es el número de nodos que se generarán dentro de aquella matriz.
     int nodos = 6;
-    Grafomatriz* matriz = (Grafomatriz *)malloc(sizeof(Grafomatriz));
+    Grafomatriz* matriz = (Grafomatriz *)malloc(sizeof(Grafomatriz)); // Su memoria se reserva automaticamente en el stack, por tener un tamaño fijo.
     inicializarMatriz(matriz, nodos);
     // Se agregan las aristas, donde se conectan bidireccional mente el origen y destino junto a su peso
     agregarAristaMatriz(matriz, 0, 1, 3); // Conexión entre 0 y 1

@@ -6,7 +6,7 @@ typedef struct Nodo
 {
     int destino;
     int peso;
-    struct Nodo *siguiente; // por qué nodo* sigui y no nodo *sigui y por qué struct?
+    struct Nodo *siguiente; // Siguiente es un puntero a struct Nodo.
 } Nodo;
 
 typedef struct GrafoLista
@@ -15,7 +15,7 @@ typedef struct GrafoLista
     int numNodos;
 } GrafoLista;
 
-void inicializarLista(GrafoLista *g, int nodos)
+void inicializarLista(GrafoLista* g, int nodos)
 {
     g->numNodos = nodos;
     for (int i = 0; i < nodos; i++)
@@ -24,10 +24,10 @@ void inicializarLista(GrafoLista *g, int nodos)
     }
 }
 
-void agregarAristaLista(GrafoLista *g, int origen, int destino, int peso)
+void agregarAristaLista(GrafoLista* g, int origen, int destino, int peso)
 {
     // Conexión en una dirección.
-    Nodo* nuevo1 = (Nodo*)malloc(sizeof(Nodo));
+    Nodo* nuevo1 = (Nodo*)malloc(sizeof(Nodo)); // Use listas enlazada dinámicas, por lo requiere reserva de memoria en el heap para agregar la conexión entre nodos.
     nuevo1->destino = destino;
     nuevo1->peso = peso;
     nuevo1->siguiente = g->lista[origen];
